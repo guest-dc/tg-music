@@ -9,7 +9,7 @@ import Header from "./components/header";
 export const metadata = {
   title: "Thomas Guest Music",
   description: "Official website for Thomas Guest Music. Explore new song releases, events, and updates.",
-  keywords: ["Thomas Guest", "Music", "Singer", "Country Music", "Music"],
+  keywords: ["Thomas Guest", "Thomas Guest Music", "Singer", "Country Music", "Music", "Macon", "Georgia", "Macon Georgia"],
   authors: [{ name: "Thomas Guest" }],
 
   openGraph: {
