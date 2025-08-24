@@ -8,10 +8,10 @@ export default function Home() {
     <main>
       
       <div style={{
-        backgroundImage: `url('/photos/temp.png')`,
+        backgroundImage: `url('/photos/wildwings.jpg')`,
         backgroundSize: 'cover',
-        backgroundPosition: 'center',
-        backgroundRepeat: 'no-repeat',
+        backgroundPosition: 'center 30%',
+        backgroundRepeat: 'no-repeat'
       }}>
         <EventCarousel title="Events"/>
       </div>

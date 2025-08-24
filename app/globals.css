@@ -29,7 +29,7 @@ h2 {
   /* font-size: 30px; */
   font-family: 'WesternBangBang', sans-serif;
   font-weight: 500;
-  text-shadow: 4px 4px 6px rgba(0,0,0,0.5);
+  text-shadow: 4px 4px 6px rgba(0,0,0,0.8);
   color: #e29156;
 }
 
@@ -211,8 +211,9 @@ footer .booking-text a:hover {
 }
 
 .event-carousel h2 {
-  font-size: 2rem;
+  font-size: 3.25rem;
   margin-bottom: 1rem;
+  
 }
 
 .carousel-container {
@@ -232,7 +233,7 @@ footer .booking-text a:hover {
   max-width: 400px;
   overflow: hidden;
   border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.5);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 1.0);
 }
 
 .carousel-image .placeholder {
@@ -250,6 +251,7 @@ footer .booking-text a:hover {
   cursor: pointer;
   padding: 0 1rem;
   transition: color 0.2s ease-in-out;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 1.0);
 }
 
 .arrow:hover {
@@ -263,6 +265,7 @@ footer .booking-text a:hover {
   transform: translateX(-50%);
   display: flex;
   gap: 8px;
+  box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.8);
 }
 
 .carousel-dots .dot {
