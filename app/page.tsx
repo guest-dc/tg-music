@@ -8,7 +8,7 @@ export default function Home() {
     <main>
       
       <div style={{
-        backgroundImage: `url('/photos/wildwings.jpg')`,
+        backgroundImage: `url('/photos/wildwings.png')`,
         backgroundSize: 'cover',
         backgroundPosition: 'center 30%',
         backgroundRepeat: 'no-repeat'
