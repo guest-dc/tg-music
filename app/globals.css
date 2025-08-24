@@ -179,11 +179,14 @@ footer {
   justify-content: center;
   gap: 1rem;
   padding: 1rem 0;
+  font-size: 12px;
 }
 
 footer .social-nav {
   display: flex;
   gap: 1rem;
+  transform: scale(0.9);
+  transform-origin: top center;
 }
 
 footer .social-nav img {
