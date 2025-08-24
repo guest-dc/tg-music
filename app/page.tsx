@@ -16,7 +16,7 @@ export default function Home() {
         <EventCarousel title="Events"/>
       </div>
       
-      asdasdasd
+      asdasdasdasd
 
     </main>
   );
