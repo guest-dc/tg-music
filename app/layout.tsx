@@ -5,6 +5,7 @@ import "./globals.css";
 import Image from "next/image";
 import Link from "next/link";
 import Header from "./components/header";
+import Footer from "./components/footer";
 
 export const metadata = {
   title: "Thomas Guest Music",
@@ -43,13 +44,9 @@ export default function RootLayout({ children }: Readonly <{ children: React.Rea
 
         <Header/>
 
-        {/* baliusdbliuasbd */}
-
         <main>{children}</main>
 
-        <footer>
-          Blah blah blah
-        </footer>
+        <Footer/>
 
       </body>
 
