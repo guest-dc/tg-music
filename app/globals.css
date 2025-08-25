@@ -1,11 +1,32 @@
 @import "tailwindcss";
 
+/*============================================================*/
+/* Variables */
+/*============================================================*/
+
+:root {
+  /* Colors */
+  --headerfooter-color: #222;
+  --background1-color: #505050;
+  --background2-color: #ff6600;
+  --text1-color: #e29156;
+  --text2-color: ;
+
+
+  --heading-size: 3.25rem;
+  --section-padding: 2rem;
+}
+
+/*============================================================*/
+/* Fonts */
+/*============================================================*/
+
 @font-face {
   font-family: 'WesternBangBang';
   src: url('/fonts/WesternBangBang.woff2') format('woff2');
   font-weight: 400;
   font-style: normal;
-  font-display: swap; /* avoids invisible text while loading */
+  font-display: swap;
 }
 
 /*============================================================*/
@@ -20,17 +41,16 @@ html, body {
 }
 
 main {
-  flex: 1; /* fills space between header and footer */
-  position: relative; /* default */
+  flex: 1;
+  position: relative;
   z-index: 1;
 }
 
 h2 {
-  /* font-size: 30px; */
   font-family: 'WesternBangBang', sans-serif;
   font-weight: 500;
   text-shadow: 4px 4px 6px rgba(0,0,0,0.8);
-  color: #e29156;
+  color: var(--text1-color);
 }
 
 /*============================================================*/
@@ -38,19 +58,9 @@ h2 {
 /*============================================================*/
 
 header {
-  /* height: 100px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0rem 4rem;
-  background-image: url("/header-banner.png");
-  background-repeat: repeat-x;
-  background-position: top;
-  background-size: auto 100%; */
-
   height: 100px;
   padding: 0rem 3.45rem;
-  background: #222;
+  background: var(--headerfooter-color);
   color: white;
   display: flex;
   align-items: center;
@@ -80,7 +90,7 @@ header .page-nav {
 
 header .page-nav a {
   text-decoration: none;
-  color: #e29156;
+  color: var(--text1-color);
   transition: color 0.2s ease-in-out;
 }
 
@@ -115,7 +125,7 @@ header .hamburger {
 
 header .hamburger span {
   height: 3px;
-  background-color: #e29156;
+  background-color: var(--text1-color);
   border-radius: 2px;
 }
 
@@ -147,10 +157,9 @@ header .hamburger span {
     position: absolute;
     top: 100%;
     right: 0;
-    background-color: #222;
+    background-color: var(--headerfooter-color);
     padding: 1rem 2rem;
     gap: 1rem;
-
     animation: flyout-roll 0.35s ease forwards;
   }
 
@@ -171,7 +180,7 @@ header .hamburger span {
 
 footer {
   height: 120px;
-  background: #222;
+  background: var(--headerfooter-color);
   color: white;
   display: flex;
   flex-direction: column;
@@ -212,8 +221,7 @@ footer .booking-text a:hover {
 
 .event-carousel h2 {
   font-size: 3.25rem;
-  margin-bottom: 1rem;
-  
+  margin: 0 0 1rem 0;
 }
 
 .carousel-container {
@@ -227,6 +235,8 @@ footer .booking-text a:hover {
   position: relative;
   max-width: 400px;
   width: 100%;
+
+  margin-bottom: 1rem;
 }
 
 .carousel-image {
@@ -288,9 +298,40 @@ footer .booking-text a:hover {
 }
 
 /*============================================================*/
+/* Photo Display Styling */
+/*============================================================*/
+
+.photo-display {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.photo-display::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: inherit;
+  background-size: cover;
+  background-position: center;
+  filter: blur(20px);
+  transform: scale(1.2);
+  z-index: 0;
+}
+
+.photo-display img {
+  position: relative;
+  z-index: 1;
+  display: block;
+  box-shadow: 0px 0px 8px rgba(0, 0, 0, 1.0);
+}
+
+/*============================================================*/
 /* Section Styling */
 /*============================================================*/
 
-/* .section-a {
-  background-image: ;
-} */
+.section-a {
+  background: #505050;
+}

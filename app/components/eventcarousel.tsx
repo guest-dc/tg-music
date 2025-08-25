@@ -41,6 +41,7 @@ export default function EventCarousel({ title }: EventCarouselProps) {
 
   return (
     <section className="event-carousel">
+      
       <h2>{title}</h2>
 
       <div className="carousel-container">
