@@ -11,10 +11,6 @@
   --background2-color: #ff6600;
   --text1-color: #e29156;
   --text2-color: ;
-
-
-  --heading-size: 3.25rem;
-  --section-padding: 2rem;
 }
 
 /*============================================================*/
@@ -59,13 +55,18 @@ h2 {
 
 header {
   height: 100px;
+  width: 100%;
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  
   padding: 0rem 3.45rem;
   background: var(--headerfooter-color);
   color: white;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  position: relative;
   z-index: 100;
 }
 
@@ -88,13 +89,13 @@ header .page-nav {
   text-shadow: 4px 4px 6px rgba(0,0,0,0.5);
 }
 
-header .page-nav a {
+header .page-nav button  {
   text-decoration: none;
   color: var(--text1-color);
   transition: color 0.2s ease-in-out;
 }
 
-header .page-nav a:hover {
+header .page-nav button:hover {
   filter: opacity(0.9);
 }
 
@@ -121,23 +122,38 @@ header .hamburger {
   width: 25px;
   height: 18px;
   cursor: pointer;
+
+  transition: transform 0.3s ease;
 }
 
 header .hamburger span {
   height: 3px;
   background-color: var(--text1-color);
   border-radius: 2px;
+
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+header .hamburger.active span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+header .hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+
+header .hamburger.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
 }
 
 @keyframes flyout-roll {
-  0% {
-    transform: translateY(-20px);
-    opacity: 0;
-  }
-  100% {
-    transform: translateY(0);
-    opacity: 1;
-  }
+  0% { transform: translateY(-20px); opacity: 0; }
+  100% { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes flyout-roll-out {
+  0% { transform: translateY(0); opacity: 1; }
+  100% { transform: translateY(-20px); opacity: 0; }
 }
 
 @media (max-width: 768px) {
@@ -149,7 +165,6 @@ header .hamburger span {
     display: flex;
   }
 
-  /* Mobile Menu Flyout */
   header .nav-container.active {
     display: flex;
     align-items: center;
@@ -161,6 +176,11 @@ header .hamburger span {
     padding: 1rem 2rem;
     gap: 1rem;
     animation: flyout-roll 0.35s ease forwards;
+  }
+
+  header .nav-container.closing {
+    pointer-events: none;
+    animation: flyout-roll 0.35s ease forwards reverse;
   }
 
   .nav-container.active .page-nav ,

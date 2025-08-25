@@ -1,4 +1,5 @@
 "use client"; // this file is a client component
+"use client";
 import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
@@ -6,6 +7,28 @@ import * as Globals from "@/app/globals";
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [closing, setClosing] = useState(false);
+
+  const toggleMenu = () => {
+    if (menuOpen) {
+      // start closing animation
+      setClosing(true);
+      setTimeout(() => {
+        setClosing(false);
+        setMenuOpen(false);
+      }, 350); // match animation duration
+    } else {
+      setMenuOpen(true);
+    }
+  };
+
+  const scrollToSection = (id: string) => {
+    const el = document.getElementById(id);
+    if (el) {
+      el.scrollIntoView({ behavior: "smooth" });
+      setMenuOpen(false);
+    }
+  };
 
   return (
     <header>
@@ -19,12 +42,13 @@ export default function Header() {
         />
       </Link>
 
-      <div className={`nav-container ${menuOpen ? "active" : ""}`}>
+      <div className={`nav-container ${menuOpen ? "active" : ""} ${closing ? "closing" : ""}`}>
         <nav className="page-nav">
-          <Link href="/">Home</Link>
-          <Link href="/music">Music</Link>
-          <Link href="/events">Events</Link>
-          <Link href="/about">About</Link>
+          <button onClick={() => scrollToSection("home")}>Home</button>
+          <button onClick={() => scrollToSection("music")}>Music</button>
+          <button onClick={() => scrollToSection("events")}>Events</button>
+          <button onClick={() => scrollToSection("about")}>About</button>
+
         </nav>
 
         <div className="social-nav">
@@ -46,7 +70,7 @@ export default function Header() {
         </div>
       </div>
 
-      <div className="hamburger" onClick={() => setMenuOpen(!menuOpen)}>
+      <div className={`hamburger ${menuOpen ? "active" : ""}`} onClick={toggleMenu}>
         <span></span>
         <span></span>
         <span></span>

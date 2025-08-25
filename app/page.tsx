@@ -10,10 +10,9 @@ export default function Home() {
 
       <PhotoDisplay src="/photos/johndeer.jpg" alt="johndeer"/>
       
-      <div className="section-a">
+      <div id="events" className="section-a">
         <EventCarousel title="Events"/>
       </div>
-      
 
     </main>
   );
