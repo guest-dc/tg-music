@@ -231,15 +231,15 @@ footer .booking-text a:hover {
 }
 
 /*============================================================*/
-/* Event Carousel Styling */
+/* Photo Carousel Styling */
 /*============================================================*/
 
-.event-carousel {
+.photo-carousel {
   text-align: center;
   padding: 2rem 0rem;
 }
 
-.event-carousel h2 {
+.photo-carousel h2 {
   font-size: 3.25rem;
   margin: 0 0 1rem 0;
 }

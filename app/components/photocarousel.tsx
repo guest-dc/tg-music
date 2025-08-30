@@ -3,26 +3,26 @@
 import { useState, useEffect } from "react";
 import Image from "next/image";
 
-interface EventCarouselProps {
+interface PhotoCarouselProps {
   title: string;
+  path: string; // passed in path does not include initial "/" (Ex. public/events or /events -> events)
 }
 
-export default function EventCarousel({ title }: EventCarouselProps) {
+export default function PhotoCarousel({ title, path }: PhotoCarouselProps) {
   const [images, setImages] = useState<string[]>([]);
   const [currentIndex, setCurrentIndex] = useState(0);
 
-  // Fetch images from the API
   useEffect(() => {
-    async function fetchFlyers() {
+    async function fetchPhotos() {
       try {
-        const res = await fetch("/api/flyers");
+        const res = await fetch(`/api/photos?path=${encodeURIComponent(path)}`);
         const data: string[] = await res.json();
         setImages(data);
       } catch (err) {
         console.error(err);
       }
     }
-    fetchFlyers();
+    fetchPhotos();
   }, []);
 
   const prevSlide = () => {
@@ -40,7 +40,7 @@ export default function EventCarousel({ title }: EventCarouselProps) {
   const showControls = images.length > 1;
 
   return (
-    <section className="event-carousel">
+    <section className="photo-carousel">
       
       <h2>{title}</h2>
 
@@ -77,19 +77,15 @@ export default function EventCarousel({ title }: EventCarouselProps) {
               ))}
             </div>
           )}
-
-
         </div>
-
-
 
         {showControls && (
           <button className="arrow right" onClick={nextSlide}>
             &#10095;
           </button>
         )}
-
       </div>
+
     </section>
   );
 }

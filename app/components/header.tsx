@@ -40,7 +40,7 @@ export default function Header() {
           height={40}
           className="logo"
         />
-      </Link>
+      </Link> 
 
       <div className={`nav-container ${menuOpen ? "active" : ""} ${closing ? "closing" : ""}`}>
         <nav className="page-nav">
