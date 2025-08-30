@@ -47,6 +47,9 @@ h2 {
   font-weight: 500;
   text-shadow: 4px 4px 6px rgba(0,0,0,0.8);
   color: var(--text1-color);
+  text-align: center;
+  font-size: 3.25rem;
+  margin: 0 0 1rem 0;
 }
 
 /*============================================================*/
@@ -146,6 +149,16 @@ header .hamburger.active span:nth-child(3) {
   transform: rotate(-45deg) translate(5px, -5px);
 }
 
+header .hamburger.closing span:nth-child(1) {
+  transform: rotate(0deg) translate(0, 0);
+}
+header .hamburger.closing span:nth-child(2) {
+  opacity: 1;
+}
+header .hamburger.closing span:nth-child(3) {
+  transform: rotate(0deg) translate(0, 0);
+}
+
 @keyframes flyout-roll {
   0% { transform: translateY(-20px); opacity: 0; }
   100% { transform: translateY(0); opacity: 1; }
@@ -175,12 +188,17 @@ header .hamburger.active span:nth-child(3) {
     background-color: var(--headerfooter-color);
     padding: 1rem 2rem;
     gap: 1rem;
+
     animation: flyout-roll 0.35s ease forwards;
+
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
   }
 
   header .nav-container.closing {
     pointer-events: none;
-    animation: flyout-roll 0.35s ease forwards reverse;
+    animation: flyout-roll-out 0.35s ease forwards;
   }
 
   .nav-container.active .page-nav ,
@@ -237,11 +255,6 @@ footer .booking-text a:hover {
 .photo-carousel {
   text-align: center;
   padding: 2rem 0rem;
-}
-
-.photo-carousel h2 {
-  font-size: 3.25rem;
-  margin: 0 0 1rem 0;
 }
 
 .carousel-container {
@@ -354,4 +367,18 @@ footer .booking-text a:hover {
 
 .section-a {
   background: #505050;
+}
+
+.section-about {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 3rem 1.5rem;
+  line-height: 1.6;
+}
+
+.section-about p {
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+  color: var(--text-color);
+  text-align: left;
 }

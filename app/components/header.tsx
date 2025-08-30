@@ -1,4 +1,3 @@
-"use client"; // this file is a client component
 "use client";
 import { useState } from "react";
 import Image from "next/image";
@@ -11,12 +10,11 @@ export default function Header() {
 
   const toggleMenu = () => {
     if (menuOpen) {
-      // start closing animation
       setClosing(true);
       setTimeout(() => {
         setClosing(false);
         setMenuOpen(false);
-      }, 350); // match animation duration
+      }, 350);
     } else {
       setMenuOpen(true);
     }
@@ -26,7 +24,7 @@ export default function Header() {
     const el = document.getElementById(id);
     if (el) {
       el.scrollIntoView({ behavior: "smooth" });
-      setMenuOpen(false);
+      toggleMenu();
     }
   };
 
@@ -34,9 +32,9 @@ export default function Header() {
     <header>
       <Link href="/">
         <Image
-          src="/icons/logo.png"
+          src="/icons/logo-bw2.png"
           alt="My Logo"
-          width={90}
+          width={110}
           height={40}
           className="logo"
         />
@@ -70,7 +68,7 @@ export default function Header() {
         </div>
       </div>
 
-      <div className={`hamburger ${menuOpen ? "active" : ""}`} onClick={toggleMenu}>
+      <div className={`hamburger ${menuOpen ? "active" : ""} ${closing ? "closing" : ""} `} onClick={toggleMenu}>
         <span></span>
         <span></span>
         <span></span>
