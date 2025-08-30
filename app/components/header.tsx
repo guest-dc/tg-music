@@ -32,7 +32,7 @@ export default function Header() {
     <header>
       <Link href="/">
         <Image
-          src="/icons/logo-bw2.png"
+          src="/icons/logo-gw.png"
           alt="My Logo"
           width={110}
           height={40}
