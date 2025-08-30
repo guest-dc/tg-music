@@ -3,6 +3,7 @@ import Image from "next/image";
 
 import PhotoCarousel from "./components/photocarousel";
 import PhotoDisplay from "./components/photodisplay";
+import MusicShowcase from "./components/musicshowcase";
 
 export default function Home() {
   return (
@@ -17,7 +18,7 @@ export default function Home() {
       </div>
 
       <div id="music">
-      
+        <MusicShowcase/>
       </div>
 
       <div id="about" className="section-about">
