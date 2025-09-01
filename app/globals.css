@@ -439,6 +439,7 @@ footer .booking-text a:hover {
 
 .section-bio .left {
   flex: 1;
+  text-align: left;
 }
 
 .section-bio .left img {
@@ -470,5 +471,9 @@ footer .booking-text a:hover {
   .section-bio .right {
     flex: unset;
     width: 100%;
+  }
+
+  .section-bio .right h2 {
+    text-align: center !important;
   }
 }

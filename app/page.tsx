@@ -39,6 +39,7 @@ export default function Home() {
             his third single, and he has several additional songs planned for release this year. Thomas Guest is 
             quickly establishing himself as an exciting new voice rising from Macon, Georgia’s rich musical soil.
           </p>
+          <br/>
           <p>
             Thomas Guest started his musical career at the age of 14 singing in chapel at his high school, 
             Windsor Academy in Macon, Georgia. His musical talent was well received by his peers and faculty 
