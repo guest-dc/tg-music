@@ -300,22 +300,22 @@ footer .booking-text a:hover {
 
 .carousel-wrapper {
   position: relative;
-  max-width: 600px;
+  max-width: 500px;
   width: 100%;
 
   margin-bottom: 1rem;
 }
 
 .carousel-image {
-  max-width: 600px;
+  max-width: 500px;
   overflow: hidden;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 1.0);
 }
 
 .carousel-image .placeholder {
-  width: 600px;
-  height: 600px;
+  width: 500px;
+  height: auto;
   background: #333;
   border-radius: 10px;
 }
