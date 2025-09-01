@@ -6,7 +6,6 @@ export default function Footer() {
      return (
           <footer>
 
-               { /* Social Media Icons */}
                <div className="social-nav">
                     <a href={Globals.SOCIALS.INSTAGRAM_LINK} target="_blank" rel="noopener noreferrer">
                          <Image src="/icons/instagram.svg" alt="Instagram" width={24} height={24} />
@@ -25,7 +24,6 @@ export default function Footer() {
                     </a>
                </div>
 
-               {/* Booking Text */}
                <p className="booking-text">
                     Get in touch for bookings at: <a href={`mailto:${Globals.BOOKING_EMAIL}`}>{Globals.BOOKING_EMAIL}</a>
                </p>

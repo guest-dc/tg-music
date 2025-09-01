@@ -1,4 +1,4 @@
-export const BOOKING_EMAIL = "booking@example.com";
+export const BOOKING_EMAIL = "thomasguestbookings@gmail.com";
 
 export const SOCIALS = {
      INSTAGRAM_LINK: "https://www.instagram.com/thomasguestmusic/",

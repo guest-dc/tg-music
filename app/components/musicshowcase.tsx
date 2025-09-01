@@ -21,24 +21,26 @@ export default function MusicShowcase() {
   }, []);
 
   return (
-    <section id="music" style={{ padding: '2rem 1rem' }}>
-      <h2>Listen on Spotify</h2>
+     <div className="section-music">
 
-      <div style={{
-        display: 'grid',
-        gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
-        gap: '1rem'
-      }}>
+      <h2>Available Music</h2>
+
+     <div className="tracks-grid">
         {tracks.map(track => (
-          <div key={track.id} style={{ textAlign: 'center' }}>
+          <div key={track.id} className="track-item">
+
             <a href={track.external_urls.spotify} target="_blank" rel="noopener noreferrer">
-              <img src={track.album.images[0].url} alt={track.name} style={{ width: '100%', borderRadius: '8px' }} />
+              <img src={track.album.images[0].url} alt={track.name} />
             </a>
-            <p style={{ margin: '0.5rem 0' }}>{track.name}</p>
-            {track.preview_url && <audio controls src={track.preview_url} style={{ width: '100%' }} />}
+
+            <p>{track.name}</p>
+
+            {track.preview_url && <audio controls src={track.preview_url} />}
+
           </div>
         ))}
       </div>
-    </section>
+      
+    </div>
   );
 }

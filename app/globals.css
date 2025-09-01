@@ -8,7 +8,7 @@
   /* Colors */
   --headerfooter-color: #222;
   --background1-color: #505050;
-  --background2-color: #ff6600;
+  --background2-color: #353535;
   --text1-color: #ba8d63;
   --text2-color: ;
 }
@@ -249,6 +249,37 @@ footer .booking-text a:hover {
 }
 
 /*============================================================*/
+/* Photo Display Styling */
+/*============================================================*/
+
+.photo-display {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.photo-display::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: inherit;
+  background-size: cover;
+  background-position: center;
+  filter: blur(20px);
+  transform: scale(1.2);
+  z-index: 0;
+}
+
+.photo-display img {
+  position: relative;
+  z-index: 1;
+  display: block;
+  box-shadow: 0px 0px 8px rgba(0, 0, 0, 1.0);
+}
+
+/*============================================================*/
 /* Photo Carousel Styling */
 /*============================================================*/
 
@@ -331,54 +362,110 @@ footer .booking-text a:hover {
 }
 
 /*============================================================*/
-/* Photo Display Styling */
+/* Music Showcase Styling */
 /*============================================================*/
 
-.photo-display {
-  position: relative;
-  display: flex;
-  align-items: center;
+.section-music h2 {
+  margin-bottom: 2rem;
+}
+
+.section-music .tracks-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 300);
+  gap: 2rem;
+  text-align: center;
   justify-content: center;
-  overflow: hidden;
+  padding: 1rem 1rem;
 }
 
-.photo-display::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: inherit;
-  background-size: cover;
-  background-position: center;
-  filter: blur(20px);
-  transform: scale(1.2);
-  z-index: 0;
+.section-music .track-item {
+  width: 300px;
+  text-align: center;
 }
 
-.photo-display img {
-  position: relative;
-  z-index: 1;
-  display: block;
-  box-shadow: 0px 0px 8px rgba(0, 0, 0, 1.0);
+.section-music .track-item img {
+  width: 300px;
+  height: auto;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.section-music .track-item p {
+  margin: 0.5rem 0;
+  font-size: 18px;
+  font-weight: bolder;
+}
+
+.section-music .track-item audio {
+  width: 100%;
+  margin-top: 0.5rem;
 }
 
 /*============================================================*/
 /* Section Styling */
 /*============================================================*/
 
-.section-a {
-  background: #505050;
+.section-events {
+  background-image: url('/gray-static.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
-.section-about {
-  max-width: 800px;
+.section-music {
+  background: var(--background1-color);
+  padding: '2rem 1rem';
+  color: white;
+  padding: 1rem 0;
+}
+
+.section-bio {
+  background: var(--headerfooter-color);
+  color: white;
+  padding: 2rem 0;
+}
+
+.section-bio .content {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  max-width: 1200px;
   margin: 0 auto;
-  padding: 3rem 1.5rem;
-  line-height: 1.6;
+  padding: 0 2rem;
 }
 
-.section-about p {
-  margin-bottom: 1rem;
-  font-size: 1.1rem;
-  color: var(--text-color);
+.section-bio .left {
+  flex: 1;
+}
+
+.section-bio .left img {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  object-fit: cover;
+}
+
+.section-bio .right {
+  flex: 1;
+}
+
+.section-bio .right h2 {
   text-align: left;
+  margin-bottom: 1rem;
+}
+
+.section-bio .right p {
+  font-size: 16px;
+}
+
+@media (max-width: 768px) {
+  .section-bio .content {
+    flex-direction: column;
+  }
+
+  .section-bio .left,
+  .section-bio .right {
+    flex: unset;
+    width: 100%;
+  }
 }

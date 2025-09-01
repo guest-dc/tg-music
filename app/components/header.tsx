@@ -23,7 +23,9 @@ export default function Header() {
   const scrollToSection = (id: string) => {
     const el = document.getElementById(id);
     if (el) {
-      el.scrollIntoView({ behavior: "smooth" });
+      const yOffset = -80;
+      const y = el.getBoundingClientRect().top + window.scrollY + yOffset;
+      window.scrollTo({ top: y, behavior: "smooth" });
       toggleMenu();
     }
   };
@@ -43,8 +45,8 @@ export default function Header() {
       <div className={`nav-container ${menuOpen ? "active" : ""} ${closing ? "closing" : ""}`}>
         <nav className="page-nav">
           <button onClick={() => scrollToSection("home")}>Home</button>
-          <button onClick={() => scrollToSection("music")}>Music</button>
           <button onClick={() => scrollToSection("events")}>Events</button>
+          <button onClick={() => scrollToSection("music")}>Music</button>
           <button onClick={() => scrollToSection("about")}>About</button>
 
         </nav>

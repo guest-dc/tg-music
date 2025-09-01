@@ -16,7 +16,7 @@ export const metadata = {
     type: "website",
     images: [
       {
-        url: "https://tg-music-seven.vercel.app/og-image.jpg",
+        url: "https://tg-music-seven.vercel.app/icons/logo-gw.png",
         width: 1200,
         height: 630,
         alt: "Thomas Guest Music",
@@ -28,7 +28,7 @@ export const metadata = {
     card: "summary_large_image",
     title: "Thomas Guest Music",
     description: "Official website for Thomas Guest Music. Explore new song releases, events, and updates.",
-    images: ["https://tg-music-seven.vercel.app/og-image.jpg"],
+    images: ["https://tg-music-seven.vercel.app/icons/logo-gw.png"],
   },
 };
 
