@@ -6,11 +6,9 @@
 
 :root {
   /* Colors */
-  --headerfooter-color: #222;
-  --background1-color: #505050;
-  --background2-color: #353535;
+  --color1: #222;
+  --color2: #505050;
   --text1-color: #ba8d63;
-  --text2-color: ;
 }
 
 /*============================================================*/
@@ -30,6 +28,7 @@
 /*============================================================*/
 
 html, body {
+  background-color: var(--color1);
   height: 100%;
   margin: 0;
   display: flex;
@@ -65,7 +64,7 @@ header {
   left: 0;
   
   padding: 0rem 3.45rem;
-  background: var(--headerfooter-color);
+  background: var(--color1);
   color: white;
   display: flex;
   align-items: center;
@@ -185,7 +184,7 @@ header .hamburger.closing span:nth-child(3) {
     position: absolute;
     top: 100%;
     right: 0;
-    background-color: var(--headerfooter-color);
+    background-color: var(--color1);
     padding: 1rem 2rem;
     gap: 1rem;
 
@@ -218,7 +217,7 @@ header .hamburger.closing span:nth-child(3) {
 
 footer {
   height: 120px;
-  background: var(--headerfooter-color);
+  background: var(--color1);
   color: white;
   display: flex;
   flex-direction: column;
@@ -417,14 +416,14 @@ footer .booking-text a:hover {
 }
 
 .section-music {
-  background: var(--background1-color);
+  background: var(--color2);
   padding: '2rem 1rem';
   color: white;
   padding: 1rem 0;
 }
 
 .section-bio {
-  background: var(--headerfooter-color);
+  background: var(--color1);
   color: white;
   padding: 2rem 0;
 }
