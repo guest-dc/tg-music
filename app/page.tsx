@@ -18,12 +18,12 @@ export default function Home() {
         <MusicShowcase/>
       </section>
 
-      <section id="about" className="section-bio">
+      <section className="section-bio">
         <div className="content">
           <div className="left">
             <img src="/photos/wildwings.png" alt="Artist photo" />
           </div>
-          <div className="right">
+          <div id="about" className="right">
           <h2>Bio</h2>
           <p>
             Born and raised in historic Macon, Georgia, Thomas Guest began developing his musical talents where 
