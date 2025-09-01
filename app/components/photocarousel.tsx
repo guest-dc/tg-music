@@ -44,7 +44,7 @@ export default function PhotoCarousel({ title, path }: PhotoCarouselProps) {
       
       <h2>{title}</h2>
 
-      <div className="carousel-container">
+      <div className={`carousel-container ${showControls ? '' : 'no-arrows'}`}>
         {showControls && (
           <button className="arrow left" onClick={prevSlide}>
             &#10094;
@@ -61,9 +61,7 @@ export default function PhotoCarousel({ title, path }: PhotoCarouselProps) {
                 width={600}
                 height={600}
               />
-            ) : (
-              <div className="placeholder" />
-            )}
+            ) : ( <div className="placeholder" /> )}
           </div>
 
           {showControls && (

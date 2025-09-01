@@ -298,11 +298,14 @@ footer .booking-text a:hover {
   position: relative;
 }
 
+.carousel-container.no-arrows {
+  margin: 0 1rem;
+}
+
 .carousel-wrapper {
   position: relative;
   max-width: 500px;
   width: 100%;
-
   margin-bottom: 1rem;
 }
 
