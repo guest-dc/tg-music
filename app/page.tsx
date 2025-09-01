@@ -11,7 +11,7 @@ export default function Home() {
       </section>
 
       <section id="events" className="section-events">
-        <PhotoCarousel title="Events Dates" path="events"/>
+        <PhotoCarousel title="Upcoming Events" path="events"/>
       </section>
 
       <section id="music" className="section-music">

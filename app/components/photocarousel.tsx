@@ -58,8 +58,8 @@ export default function PhotoCarousel({ title, path }: PhotoCarouselProps) {
               <Image
                 src={images[currentIndex]}
                 alt={`Flyer ${currentIndex + 1}`}
-                width={400}
-                height={500}
+                width={600}
+                height={600}
               />
             ) : (
               <div className="placeholder" />
