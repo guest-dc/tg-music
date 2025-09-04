@@ -7,7 +7,7 @@ export default function Home() {
     <main>
 
       <section id="home">
-        <PhotoDisplay src="/photos/walking_guitar.JPEG" alt="Artist photo"/>
+        <PhotoDisplay src="/photos/walking_guitar.jpg" alt="Artist photo"/>
       </section>
 
       <section id="events" className="section-events">
