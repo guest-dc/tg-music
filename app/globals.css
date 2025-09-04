@@ -375,26 +375,22 @@ footer .booking-text a:hover {
 /* Music Showcase Styling */
 /*============================================================*/
 
-.section-music h2 {
-  margin-bottom: 2rem;
-}
-
 .section-music .tracks-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, 300);
-  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, 250);
+  gap: 1rem;
   text-align: center;
   justify-content: center;
   padding: 1rem 1rem;
 }
 
 .section-music .track-item {
-  width: 300px;
+  width: 250px;
   text-align: center;
 }
 
 .section-music .track-item img {
-  width: 300px;
+  width: 250px;
   height: auto;
   object-fit: cover;
   border-radius: 8px;
