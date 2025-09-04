@@ -7,7 +7,7 @@ export default function Home() {
     <main>
 
       <section id="home">
-        <PhotoDisplay src="/photos/johndeer.jpg" alt="Artist photo"/>
+        <PhotoDisplay src="/photos/walking_guitar.JPEG" alt="Artist photo"/>
       </section>
 
       <section id="events" className="section-events">
@@ -21,7 +21,7 @@ export default function Home() {
       <section className="section-bio">
         <div className="content">
           <div className="left">
-            <img src="/photos/wildwings.png" alt="Artist photo" />
+            <img src="/photos/johndeer.jpg" alt="Artist photo" />
           </div>
           <div id="about" className="right">
           <h2>Bio</h2>

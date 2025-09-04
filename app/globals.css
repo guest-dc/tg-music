@@ -243,6 +243,10 @@ footer .social-nav a:hover img {
   filter: invert(0.7);
 }
 
+footer .booking-text {
+  text-align: center;
+}
+
 footer .booking-text a {
   font-weight: 500;
 }
@@ -412,7 +416,7 @@ footer .booking-text a:hover {
 /*============================================================*/
 
 .section-events {
-  background-image: url('/gray-static.png');
+  background-image: url('/black-static.png');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -426,7 +430,10 @@ footer .booking-text a:hover {
 }
 
 .section-bio {
-  background: var(--color1);
+  background-image: url('/grey-static.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   color: white;
   padding: 2rem 0;
 }

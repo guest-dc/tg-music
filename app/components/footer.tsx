@@ -25,8 +25,10 @@ export default function Footer() {
                </div>
 
                <p className="booking-text">
-                    Get in touch for bookings at: <a href={`mailto:${Globals.BOOKING_EMAIL}`}>{Globals.BOOKING_EMAIL}</a>
+                    Get in touch for bookings at:<br/>
+                    <a href={`mailto:${Globals.BOOKING_EMAIL}`}>{Globals.BOOKING_EMAIL}</a>
                </p>
+               
 
           </footer>
      );
