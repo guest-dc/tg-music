@@ -1,5 +1,6 @@
 "use client";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useRouter, usePathname } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
 import * as Globals from "@/app/globals";
@@ -7,6 +8,9 @@ import * as Globals from "@/app/globals";
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [closing, setClosing] = useState(false);
+
+  const router = useRouter();
+  const pathname = usePathname();
 
   const toggleMenu = () => {
     if (menuOpen) {
@@ -23,10 +27,19 @@ export default function Header() {
   const scrollToSection = (id: string) => {
     const el = document.getElementById(id);
     if (el) {
-      const yOffset = -80;
+      const yOffset = -100;
       const y = el.getBoundingClientRect().top + window.scrollY + yOffset;
       window.scrollTo({ top: y, behavior: "smooth" });
       toggleMenu();
+    }
+  };
+
+  const handleNavClick = (id: string) => {
+    if (pathname === "/") {
+      scrollToSection(id);
+    } else {
+      sessionStorage.setItem("scrollTarget", id);
+      router.push("/");
     }
   };
 
@@ -44,10 +57,13 @@ export default function Header() {
 
       <div className={`nav-container ${menuOpen ? "active" : ""} ${closing ? "closing" : ""}`}>
         <nav className="page-nav">
-          <button onClick={() => scrollToSection("home")}>Home</button>
-          <button onClick={() => scrollToSection("events")}>Events</button>
-          <button onClick={() => scrollToSection("music")}>Music</button>
-          <button onClick={() => scrollToSection("about")}>About</button>
+          <button onClick={() => handleNavClick("home")}>Home</button>
+          <button onClick={() => handleNavClick("events")}>Events</button>
+          <button onClick={() => handleNavClick("music")}>Music</button>
+          <button onClick={() => handleNavClick("about")}>About</button>
+          <Link href="/pages/contact" passHref>
+            <button>Contact</button>
+          </Link>
 
         </nav>
 

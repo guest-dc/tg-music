@@ -1,13 +1,60 @@
+"use client";
+import { useState, useEffect } from "react";
 import PhotoCarousel from "./components/photocarousel";
 import PhotoDisplay from "./components/photodisplay";
-import MusicShowcase from "./components/musicshowcase";
+import MusicShowcase, { Track } from "./components/musicshowcase";
 
 export default function Home() {
+
+  const [photos, setPhotos] = useState<string[]>([]);
+  const [tracks, setTracks] = useState<Track[]>([]);
+  const [loading, setLoading] = useState(true);
+
+  function scrollToSection(id: string) {
+    const el = document.getElementById(id);
+    if (el) {
+      const yOffset = -100;
+      const y = el.getBoundingClientRect().top + window.scrollY + yOffset;
+      window.scrollTo({ top: y, behavior: "smooth" });
+    }
+  }
+
+  // Waits for all photos and tracks are finished loading
+  useEffect(() => {
+    async function fetchData() {
+      try {
+        const [photosRes, musicRes] = await Promise.all([
+          fetch("/api/photos?path=events").then(res => res.json()),
+          fetch("/api/music").then(res => res.json())
+        ]);
+        setPhotos(photosRes);
+        setTracks(musicRes.tracks || []);
+
+      } catch (err) {
+        console.error(err);
+
+      } finally {
+        setLoading(false);
+      }
+    }
+    fetchData();
+  }, []);
+
+  // Scrolls to clicked button's section when navigating back to home
+  useEffect(() => {
+    const target = sessionStorage.getItem("scrollTarget");
+    if (!target) return;
+    if (!loading) {
+      scrollToSection(target);
+      sessionStorage.removeItem("scrollTarget");
+    }
+  }, [loading]);
+
   return (
     <main>
 
       <section id="home">
-        <PhotoDisplay src="/photos/walking_guitar.jpg" alt="Artist photo"/>
+        <PhotoDisplay src="/photos/walking_guitar.png" alt="Artist photo"/>
       </section>
 
       <section id="events" className="section-events">
@@ -18,13 +65,13 @@ export default function Home() {
         <MusicShowcase/>
       </section>
 
-      <section className="section-bio">
+      <section id="about" className="section-bio">
         <div className="content">
           <div className="left">
             <img src="/photos/johndeer.jpg" alt="Artist photo" />
           </div>
-          <div id="about" className="right">
-          <h2>Bio</h2>
+          <div className="right">
+          <h2>About</h2>
           <p>
             Born and raised in historic Macon, Georgia, Thomas Guest began developing his musical talents where 
             legends were born and performed. Influenced by iconic artists in country, hip-hop, gospel, and southern 
