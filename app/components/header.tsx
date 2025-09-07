@@ -38,6 +38,7 @@ export default function Header() {
     if (pathname === "/") {
       scrollToSection(id);
     } else {
+      toggleMenu();
       sessionStorage.setItem("scrollTarget", id);
       router.push("/");
     }
@@ -62,7 +63,7 @@ export default function Header() {
           <button onClick={() => handleNavClick("music")}>Music</button>
           <button onClick={() => handleNavClick("about")}>About</button>
           <Link href="/pages/contact" passHref>
-            <button>Contact</button>
+            <button onClick={() => { toggleMenu(); }}>Contact</button>
           </Link>
 
         </nav>
