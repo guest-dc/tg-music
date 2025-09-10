@@ -1,5 +1,7 @@
 @import "tailwindcss";
 
+@import "@fortawesome/fontawesome-free/css/all.min.css";
+
 /*============================================================*/
 /* Variables */
 /*============================================================*/
@@ -97,6 +99,7 @@ header .page-nav button  {
 
 header .page-nav button:hover {
   filter: opacity(0.9);
+  cursor: pointer;
 }
 
 header .page-nav button.active {
@@ -218,7 +221,7 @@ header .hamburger.closing span:nth-child(3) {
 /*============================================================*/
 
 footer {
-  height: 120px;
+  height: 60px;
   background: var(--color1);
   display: flex;
   flex-direction: column;
@@ -226,7 +229,6 @@ footer {
   justify-content: center;
   gap: 1rem;
   padding: 1rem 0;
-  font-size: 15px;
 }
 
 footer .social-nav {
@@ -242,18 +244,6 @@ footer .social-nav img {
 
 footer .social-nav a:hover img {
   filter: invert(0.7);
-}
-
-footer .booking-text {
-  text-align: center;
-}
-
-footer .booking-text a {
-  font-weight: 500;
-}
-
-footer .booking-text a:hover {
-  text-decoration: underline;
 }
 
 /*============================================================*/
@@ -489,19 +479,33 @@ footer .booking-text a:hover {
 /*============================================================*/
 
 .contact {
-  text-align: center;
   justify-content: center;
   padding-top: 100px;
 }
 
-.contact h2 {
-  margin-bottom: 0rem;
-}
-
-.contact .booking-text a {
+.contact h3 {
   font-weight: 500;
+  text-shadow: 4px 4px 6px rgba(0,0,0,0.8);
+  color: var(--text1-color);
+  text-align: center;
+  font-size: 1.5rem;
+  margin: 1rem 0rem;
 }
 
-.contact .booking-text a:hover {
+.contact .booking-text-a,
+.contact .booking-text-b {
+  max-width: 500px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.contact .booking-text-b a {
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.contact .booking-text-b a:hover {
   text-decoration: underline;
 }
