@@ -41,14 +41,36 @@ export default function Home() {
   }, []);
 
   // Scrolls to clicked button's section when navigating back to home
+  // useEffect(() => {
+  //   const target = sessionStorage.getItem("scrollTarget");
+  //   if (!target) return;
+  //   if (!loading) {
+  //     scrollToSection(target);
+  //     sessionStorage.removeItem("scrollTarget");
+  //   }
+  // }, [loading]);
+
   useEffect(() => {
-    const target = sessionStorage.getItem("scrollTarget");
-    if (!target) return;
-    if (!loading) {
-      scrollToSection(target);
-      sessionStorage.removeItem("scrollTarget");
+  const target = sessionStorage.getItem("scrollTarget");
+  if (!target || loading) return;
+
+  // Wait until next paint cycle so layout is stable
+  requestAnimationFrame(() => {
+    // const el = document.getElementById(target);
+    // if (el) {
+    //   el.scrollIntoView({ behavior: "smooth", block: "start" });
+    // }
+    // sessionStorage.removeItem("scrollTarget");
+
+    const el = document.getElementById(target);
+    if (el) {
+      const yOffset = -100;
+      const y = el.getBoundingClientRect().top + window.scrollY + yOffset;
+      window.scrollTo({ top: y, behavior: "smooth" });
     }
-  }, [loading]);
+    sessionStorage.removeItem("scrollTarget");
+  });
+}, [loading]);
 
   return (
     <main>
