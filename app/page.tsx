@@ -10,15 +10,6 @@ export default function Home() {
   const [tracks, setTracks] = useState<Track[]>([]);
   const [loading, setLoading] = useState(true);
 
-  function scrollToSection(id: string) {
-    const el = document.getElementById(id);
-    if (el) {
-      const yOffset = -100;
-      const y = el.getBoundingClientRect().top + window.scrollY + yOffset;
-      window.scrollTo({ top: y, behavior: "smooth" });
-    }
-  }
-
   // Waits for all photos and tracks are finished loading
   useEffect(() => {
     async function fetchData() {
@@ -41,36 +32,21 @@ export default function Home() {
   }, []);
 
   // Scrolls to clicked button's section when navigating back to home
-  // useEffect(() => {
-  //   const target = sessionStorage.getItem("scrollTarget");
-  //   if (!target) return;
-  //   if (!loading) {
-  //     scrollToSection(target);
-  //     sessionStorage.removeItem("scrollTarget");
-  //   }
-  // }, [loading]);
-
   useEffect(() => {
-  const target = sessionStorage.getItem("scrollTarget");
-  if (!target || loading) return;
+    const target = sessionStorage.getItem("scrollTarget");
+    if (!target || loading) return;
 
-  // Wait until next paint cycle so layout is stable
-  requestAnimationFrame(() => {
-    // const el = document.getElementById(target);
-    // if (el) {
-    //   el.scrollIntoView({ behavior: "smooth", block: "start" });
-    // }
-    // sessionStorage.removeItem("scrollTarget");
-
-    const el = document.getElementById(target);
-    if (el) {
-      const yOffset = -100;
-      const y = el.getBoundingClientRect().top + window.scrollY + yOffset;
-      window.scrollTo({ top: y, behavior: "smooth" });
-    }
-    sessionStorage.removeItem("scrollTarget");
-  });
-}, [loading]);
+    // Wait until next paint cycle so layout is stable
+    requestAnimationFrame(() => {
+      const el = document.getElementById(target);
+      if (el) {
+        const yOffset = -100;
+        const y = el.getBoundingClientRect().top + window.scrollY + yOffset;
+        window.scrollTo({ top: y, behavior: "smooth" });
+      }
+      sessionStorage.removeItem("scrollTarget");
+    });
+  }, [loading]);
 
   return (
     <main>
