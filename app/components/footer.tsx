@@ -24,6 +24,14 @@ export default function Footer() {
                     </a>
                </div>
 
+               <p>Sponsored By:</p>
+
+               <div className="sponsors">
+                    <a href="https://www.brandedstarr.com/" target="_blank" rel="noopener noreferrer">
+                         <Image src="/icons/branded_starr.png" alt="Branded Starr" width={120} height={60} />
+                    </a>
+               </div>
+
           </footer>
      );
 }
