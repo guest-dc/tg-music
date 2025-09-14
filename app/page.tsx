@@ -74,14 +74,14 @@ export default function Home() {
             Born and raised in historic Macon, Georgia, Thomas Guest began developing his musical talents where 
             legends were born and performed. Influenced by iconic artists in country, hip-hop, gospel, and southern 
             rock, Thomas infuses his own unique personal charm in his music. Although relatively new to the scene, 
-            Thomas has made headway with his first single, <i>Find You</i>, which debuted on iHeartRadio’s 
-            Back Yard Country with host William "WB" Barber. Thomas has performed at Macon’s Cherry Blossom Festival, 
-            The Society Garden, The Hummingbird Stage & Taproom, and various other local venues in Middle and 
-            South Georgia. He has performed his songs, along with a mix of covers, both acoustically and with 
-            his full band. <i>Making Changes in Macon</i>, his second release, again carries heartfelt emotions, 
-            centered on his hometown of Macon, Georgia. He performed this song on the morning show of the 
-            local country station, WDEN 99.1, with hosts Laura Starling and Vance Shepard. <i>Mystery Girl</i> is 
-            his third single, and he has several additional songs planned for release this year. Thomas Guest is 
+            Thomas has made headway with his first single, <i>Find You</i>. The track debuted on iHeartRadio’s 
+            96.5 The Bull during <i>Back Yard Country</i> with host William "WB" Barber. Thomas has performed at
+            Macon’s Cherry Blossom Festival, The Society Garden, The Hummingbird Stage & Taproom, and various other
+            local venues in Middle and South Georgia. He has performed his songs, along with a mix of covers, both 
+            acoustically and with his full band. <i>Making Changes in Macon</i>, his second release, again carries 
+            heartfelt emotions, centered on his hometown of Macon, Georgia. He performed this song on the morning 
+            show of the local country station, WDEN 99.1, with hosts Laura Starling and Vance Shepard. <i>Mystery Girl</i> 
+            is his third single, and he has several additional songs planned for release this year. Thomas Guest is 
             quickly establishing himself as an exciting new voice rising from Macon’s rich musical soil.
           </p>
           <br/>
