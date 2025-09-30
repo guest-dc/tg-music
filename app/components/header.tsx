@@ -1,7 +1,6 @@
 "use client";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { useRouter, usePathname } from "next/navigation";
-import Image from "next/image";
 import Link from "next/link";
 import * as Globals from "@/app/globals";
 
@@ -46,15 +45,10 @@ export default function Header() {
 
   return (
     <header>
+
       <Link href="/">
-        <Image
-          src="/icons/logo-gw.png"
-          alt="My Logo"
-          width={110}
-          height={40}
-          className="logo"
-        />
-      </Link> 
+        <img className="logo" src="/icons/logo-gw.png" alt="Logo" width={110} height={40} />
+      </Link>
 
       <div className={`nav-container ${menuOpen ? "active" : ""} ${closing ? "closing" : ""}`}>
         <nav className="page-nav">
@@ -70,19 +64,22 @@ export default function Header() {
 
         <div className="social-nav">
           <a href={Globals.SOCIALS.INSTAGRAM_LINK} target="_blank" rel="noopener noreferrer">
-            <Image src="/icons/instagram.svg" alt="Instagram" width={24} height={24} />
+            <img src="/icons/instagram.svg" alt="Instagram" width={24} height={24} />
           </a>
           <a href={Globals.SOCIALS.FACEBOOK_LINK} target="_blank" rel="noopener noreferrer">
-            <Image src="/icons/facebook.svg" alt="Facebook" width={24} height={24} />
+            <img src="/icons/facebook.svg" alt="Facebook" width={24} height={24} />
           </a>
           <a href={Globals.SOCIALS.TIKTOK_LINK} target="_blank" rel="noopener noreferrer">
-            <Image src="/icons/tiktok.svg" alt="TikTok" width={24} height={24} />
-          </a>
-          <a href={Globals.SOCIALS.SPOTIFY_LINK} target="_blank" rel="noopener noreferrer">
-            <Image src="/icons/spotify.svg" alt="Spotify" width={24} height={24} />
+            <img src="/icons/tiktok.svg" alt="TikTok" width={24} height={24} />
           </a>
           <a href={Globals.SOCIALS.YOUTUBE_LINK} target="_blank" rel="noopener noreferrer">
-            <Image src="/icons/youtube.svg" alt="YouTube" width={24} height={24} />
+            <img src="/icons/youtube.svg" alt="YouTube" width={24} height={24} />
+          </a>
+          <a href={Globals.SOCIALS.SPOTIFY_LINK} target="_blank" rel="noopener noreferrer">
+            <img src="/icons/spotify.svg" alt="Spotify" width={24} height={24} />
+          </a>
+          <a href={Globals.SOCIALS.YOUTUBE_MUSIC_LINK} target="_blank" rel="noopener noreferrer">
+            <img src="/icons/youtube-music.svg" alt="YouTubeMusic" width={24} height={24} />
           </a>
         </div>
       </div>

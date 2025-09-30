@@ -1,4 +1,3 @@
-import Image from "next/image";
 import React from "react";
 
 interface PhotoDisplayProps {
@@ -16,12 +15,7 @@ export default function PhotoDisplay({
 }: PhotoDisplayProps) {
   return (
     <div className="photo-display" style={{ backgroundImage: `url(${src})` }}>
-      <Image
-        src={src}
-        alt={alt}
-        width={width}
-        height={height}
-      />
+      <img className="Image" src={src} alt={alt} width={width} height={height} />
     </div>
   );
 }

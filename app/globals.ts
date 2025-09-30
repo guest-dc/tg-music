@@ -6,4 +6,5 @@ export const SOCIALS = {
      SPOTIFY_LINK: "https://open.spotify.com/artist/2TMi9BlE8IlHh43hlEdfRM?si=ymUD8UsjT5-qhJQqyq4L-g",
      YOUTUBE_LINK: "https://www.youtube.com/@ThomasGuestMusic",
      TIKTOK_LINK: "https://www.tiktok.com/@officialthomasguest",
+     YOUTUBE_MUSIC_LINK: "https://music.youtube.com/channel/UCODHo8_ZBj75kquwKXzN8pg",
 }

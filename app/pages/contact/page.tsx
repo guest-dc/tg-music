@@ -5,7 +5,7 @@ import * as Globals from "@/app/globals";
 export default function ContactPage() {
 
      useEffect(() => {
-          document.body.style.backgroundImage = "url('/black-static.png')";
+          document.body.style.backgroundImage = "var(--blackstatic)";
           document.body.style.backgroundSize = "cover";
           document.body.style.backgroundPosition = "center";
           document.body.style.backgroundRepeat = "no-repeat";

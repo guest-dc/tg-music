@@ -11,6 +11,10 @@
   --color1: #222;
   --color2: #505050;
   --text1-color: #ba8d63;
+
+  /* URL Paths */
+  --blackstatic: url('/backgrounds/black-static.png');
+  --greystatic: url('/backgrounds/grey-static.png');
 }
 
 /*============================================================*/
@@ -74,6 +78,7 @@ header {
 
 header .logo {
   object-fit: contain;
+  display: block;
 }
 
 header .nav-container {
@@ -284,6 +289,10 @@ footer .sponsors img {
   transform: scale(1.2);
   z-index: 0;
 }
+/* .photo-display Image {
+  object-fit: contain;
+  display: block;
+} */
 
 .photo-display img {
   position: relative;
@@ -418,7 +427,7 @@ footer .sponsors img {
 /*============================================================*/
 
 .section-events {
-  background-image: url('/black-static.png');
+  background-image: var(--blackstatic);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -431,7 +440,7 @@ footer .sponsors img {
 }
 
 .section-bio {
-  background-image: url('/grey-static.png');
+  background-image: var(--greystatic);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
