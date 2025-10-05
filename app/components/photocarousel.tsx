@@ -59,6 +59,11 @@ export default function PhotoCarousel({ title, path }: PhotoCarouselProps) {
                 alt={`Flyer ${currentIndex + 1}`}
                 width={600}
                 height={600}
+                style={{
+                  maxWidth: "100%",
+                  height: "auto",
+                  objectFit: "contain",
+                }}
               />
             ) : ( <div className="placeholder" /> )}
           </div>
