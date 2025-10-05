@@ -10,6 +10,7 @@ interface PhotoCarouselProps {
 export default function PhotoCarousel({ title, path }: PhotoCarouselProps) {
   const [images, setImages] = useState<string[]>([]);
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [isFocused, setIsFocused] = useState(false);
 
   useEffect(() => {
     async function fetchPhotos() {
@@ -52,7 +53,7 @@ export default function PhotoCarousel({ title, path }: PhotoCarouselProps) {
 
         <div className="carousel-wrapper">
 
-          <div className="carousel-image">
+          <div className="carousel-image" onClick={() => setIsFocused(true)}>
             {images.length > 0 ? (
               <Image
                 src={images[currentIndex]}
@@ -63,6 +64,7 @@ export default function PhotoCarousel({ title, path }: PhotoCarouselProps) {
                   maxWidth: "100%",
                   height: "auto",
                   objectFit: "contain",
+                  cursor: "pointer"
                 }}
               />
             ) : ( <div className="placeholder" /> )}
@@ -86,7 +88,38 @@ export default function PhotoCarousel({ title, path }: PhotoCarouselProps) {
             &#10095;
           </button>
         )}
+
       </div>
+
+      {isFocused && (
+        <div className="focusbox" onClick={() => setIsFocused(false)}>
+          <div className="focusbox-content" onClick={(e) => e.stopPropagation()}>
+            <div className="focusbox-image-wrapper">
+              <button
+                className="focusbox-close"
+                onClick={() => setIsFocused(false)}
+                aria-label="Close focused image"
+              >
+                &times;
+              </button>
+
+              <Image
+                src={images[currentIndex]}
+                alt={`Flyer ${currentIndex + 1}`}
+                width={800}
+                height={800}
+                style={{
+                  maxWidth: "80vw",
+                  maxHeight: "80vh",
+                  objectFit: "contain",
+                  display: "block",
+                }}
+                unoptimized
+              />
+            </div>
+          </div>
+        </div>
+      )}
 
     </section>
   );
