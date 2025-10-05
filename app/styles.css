@@ -289,10 +289,6 @@ footer .sponsors img {
   transform: scale(1.2);
   z-index: 0;
 }
-/* .photo-display Image {
-  object-fit: contain;
-  display: block;
-} */
 
 .photo-display img {
   position: relative;
