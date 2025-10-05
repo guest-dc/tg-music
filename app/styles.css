@@ -325,10 +325,22 @@ footer .sponsors img {
 }
 
 .carousel-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   max-width: 500px;
-  overflow: hidden;
+  max-height: 500px;
+  margin: 0 auto;
+}
+
+.carousel-image img {
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: 500px;
   border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 1.0);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 1);
+  object-fit: contain;
 }
 
 .carousel-image .placeholder {
@@ -354,11 +366,10 @@ footer .sponsors img {
 }
 
 .carousel-dots {
-  position: absolute;
-  bottom: 10px;
-  left: 50%;
-  transform: translateX(-50%);
+  position: static;
+  margin-top: 1rem;
   display: flex;
+  justify-content: center;
   gap: 8px;
 }
 
@@ -380,6 +391,54 @@ footer .sponsors img {
 
 .carousel-dots .dot:hover {
   background-color: rgba(255, 255, 255, 0.8);
+}
+
+.focusbox {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  cursor: zoom-out;
+  animation: fadeIn 0.2s ease-in-out;
+  box-sizing: border-box;
+}
+
+.focusbox-content {
+  display: flex;
+  align-items: center;
+  cursor: default;
+  transform: translateY(10px);
+}
+
+.focusbox-close {
+  margin-bottom: 1rem;
+  
+  background: none;
+  border: none;
+  color: white;
+  font-size: 4rem;
+  font-weight: 300;
+  line-height: 1;
+  cursor: pointer;
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.9);
+  transition: transform 0.2s ease, opacity 0.2s ease;
+  z-index: 1001;
+}
+
+.focusbox-close:hover {
+  transform: scale(1.1);
+  opacity: 0.85;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
 
 /*============================================================*/
@@ -494,7 +553,7 @@ footer .sponsors img {
 }
 
 /*============================================================*/
-/* Photo Carousel Styling */
+/* Contact Page Styling */
 /*============================================================*/
 
 .contact {
