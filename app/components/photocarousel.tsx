@@ -75,7 +75,7 @@ export default function PhotoCarousel({ title, path }: PhotoCarouselProps) {
                   maxWidth: "100%",
                   height: "auto",
                   objectFit: "contain",
-                  cursor: "pointer"
+                  cursor: "pointer",
                 }}
               />
             ) : ( <div className="placeholder" /> )}
