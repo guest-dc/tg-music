@@ -366,11 +366,10 @@ footer .sponsors img {
 }
 
 .carousel-dots {
-  position: absolute;
-  bottom: 10px;
-  left: 50%;
-  transform: translateX(-50%);
+  position: static;
+  margin-top: 1rem;
   display: flex;
+  justify-content: center;
   gap: 8px;
 }
 
