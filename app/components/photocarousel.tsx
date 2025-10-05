@@ -25,13 +25,12 @@ export default function PhotoCarousel({ title, path }: PhotoCarouselProps) {
     fetchPhotos();
   }, []);
 
-  // rotate images every 3 seconds
   useEffect(() => {
-    if (images.length <= 1 || isFocused) return; // no need to rotate if only 1 image or focused
+    if (images.length <= 1 || isFocused) return;
 
     const interval = setInterval(() => {
       setCurrentIndex((prev) => (prev + 1) % images.length);
-    }, 5000);
+    }, 10000);
 
     return () => clearInterval(interval);
   }, [images, isFocused]);
@@ -68,7 +67,7 @@ export default function PhotoCarousel({ title, path }: PhotoCarouselProps) {
             {images.length > 0 ? (
               <Image
                 src={images[currentIndex]}
-                alt={`Flyer ${currentIndex + 1}`}
+                alt={`Flyer   ${currentIndex + 1}`}
                 width={600}
                 height={600}
                 style={{
