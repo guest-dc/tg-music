@@ -10,9 +10,9 @@
   },
   "dependencies": {
     "@fortawesome/fontawesome-free": "^7.0.1",
-    "next": "^15.5.2",
-    "react": "19.1.0",
-    "react-dom": "19.1.0"
+    "next": "^15.5.7",
+    "react": "^19.2.1",
+    "react-dom": "^19.2.1"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",
