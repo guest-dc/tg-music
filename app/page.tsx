@@ -10,15 +10,23 @@ export default function Home() {
   const [tracks, setTracks] = useState<Track[]>([]);
   const [loading, setLoading] = useState(true);
 
-  // Waits for all photos and tracks are finished loading
+  // Waits for all flyers and tracks are finished loading
   useEffect(() => {
     async function fetchData() {
       try {
-        const [photosRes, musicRes] = await Promise.all([
-          fetch("/api/photos?path=events").then(res => res.json()),
-          fetch("/api/music").then(res => res.json())
+        const [flyersRes, musicRes] = await Promise.all([
+          fetch("/api/flyers").then(async res => {
+            if (!res.ok) throw new Error(`HTTP error ${res.status}`);
+            const text = await res.text();
+            return text ? JSON.parse(text) : [];
+          }),
+          fetch("/api/music").then(async res => {
+            if (!res.ok) throw new Error(`HTTP error ${res.status}`);
+            const text = await res.text();
+            return text ? JSON.parse(text) : { tracks: [] };
+          })
         ]);
-        setPhotos(photosRes);
+        setPhotos(flyersRes.map((f: { url: string }) => f.url));
         setTracks(musicRes.tracks || []);
 
       } catch (err) {

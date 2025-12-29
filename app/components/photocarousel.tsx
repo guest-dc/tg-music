@@ -15,9 +15,9 @@ export default function PhotoCarousel({ title, path }: PhotoCarouselProps) {
   useEffect(() => {
     async function fetchPhotos() {
       try {
-        const res = await fetch(`/api/photos?path=${encodeURIComponent(path)}`);
-        const data: string[] = await res.json();
-        setImages(data);
+        const res = await fetch("/api/flyers");
+        const data: { name: string; url: string }[] = await res.json();
+        setImages(data.map(f => f.url));
       } catch (err) {
         console.error(err);
       }
