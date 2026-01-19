@@ -56,6 +56,9 @@ export default function Header() {
           <button onClick={() => handleNavClick("events")}>Events</button>
           <button onClick={() => handleNavClick("music")}>Music</button>
           <button onClick={() => handleNavClick("about")}>About</button>
+          <Link href="/pages/epk" passHref>
+            <button onClick={() => { toggleMenu(); }}>EPK</button>
+          </Link>
           <Link href="/pages/contact" passHref>
             <button onClick={() => { toggleMenu(); }}>Contact</button>
           </Link>

@@ -587,3 +587,18 @@ footer .sponsors img {
 .contact .booking-text-b a:hover {
   text-decoration: underline;
 }
+
+/*============================================================*/
+/* EPK Page Styling */
+/*============================================================*/
+
+.epk {
+  padding-top: 100px;
+  height: 100vh; 
+}
+
+  .epk iframe {
+    width: 100%;
+    border: none;
+    display: block;
+  }
