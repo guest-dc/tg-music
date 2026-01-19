@@ -3,8 +3,6 @@ import { useEffect, useRef } from "react";
 import * as Globals from "@/app/globals";
 
 export default function EpkPage() {
-   const iframeRef = useRef<HTMLIFrameElement>(null);
-   const headerHeight = 100;
 
    useEffect(() => {
       document.body.style.backgroundImage = "var(--blackstatic)";
