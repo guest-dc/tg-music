@@ -15,16 +15,16 @@ export async function GET() {
       return NextResponse.json({ error: "No files found" }, { status: 404 });
     }
 
-    const flyers = data.files
+    const events = data.files
       .filter((file: any) => file.mimeType.startsWith("image/"))
       .map((file: any) => ({
         name: file.name,
         url: `https://drive.google.com/uc?export=view&id=${file.id}`,
       }));
 
-    return NextResponse.json(flyers);
+    return NextResponse.json(events);
   } catch (err) {
     console.error(err);
-    return NextResponse.json({ error: "Failed to fetch flyers" }, { status: 500 });
+    return NextResponse.json({ error: "Failed to fetch events." }, { status: 500 });
   }
 }

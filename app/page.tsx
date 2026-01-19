@@ -1,6 +1,6 @@
 "use client";
 import { useState, useEffect } from "react";
-import PhotoCarousel from "./components/photocarousel";
+import EventCarousel from "./components/eventcarousel";
 import PhotoDisplay from "./components/photodisplay";
 import MusicShowcase, { Track } from "./components/musicshowcase";
 
@@ -10,12 +10,12 @@ export default function Home() {
   const [tracks, setTracks] = useState<Track[]>([]);
   const [loading, setLoading] = useState(true);
 
-  // Waits for all flyers and tracks are finished loading
+  // Waits for all events and tracks are finished loading
   useEffect(() => {
     async function fetchData() {
       try {
-        const [flyersRes, musicRes] = await Promise.all([
-          fetch("/api/flyers").then(async res => {
+        const [eventsRes, musicRes] = await Promise.all([
+          fetch("/api/events").then(async res => {
             if (!res.ok) throw new Error(`HTTP error ${res.status}`);
             const text = await res.text();
             return text ? JSON.parse(text) : [];
@@ -26,7 +26,7 @@ export default function Home() {
             return text ? JSON.parse(text) : { tracks: [] };
           })
         ]);
-        setPhotos(flyersRes.map((f: { url: string }) => f.url));
+        setPhotos(eventsRes.map((f: { url: string }) => f.url));
         setTracks(musicRes.tracks || []);
 
       } catch (err) {
@@ -64,7 +64,7 @@ export default function Home() {
       </section>
 
       <section id="events" className="section-events">
-        <PhotoCarousel title="Upcoming Events" path="events"/>
+        <EventCarousel title="Upcoming Events"/>
       </section>
 
       <section id="music" className="section-music">

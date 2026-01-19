@@ -2,12 +2,11 @@
 import { useState, useEffect } from "react";
 import Image from "next/image";
 
-interface PhotoCarouselProps {
+interface EventCarouselProps {
   title: string;
-  path: string; // passed in path does not include initial "/" (Ex. public/events or /events -> events)
 }
 
-export default function PhotoCarousel({ title, path }: PhotoCarouselProps) {
+export default function EventCarousel({ title }: EventCarouselProps) {
   const [images, setImages] = useState<string[]>([]);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isFocused, setIsFocused] = useState(false);
@@ -15,7 +14,7 @@ export default function PhotoCarousel({ title, path }: PhotoCarouselProps) {
   useEffect(() => {
     async function fetchPhotos() {
       try {
-        const res = await fetch("/api/flyers");
+        const res = await fetch("/api/events");
         const data: { name: string; url: string }[] = await res.json();
         setImages(data.map(f => f.url));
       } catch (err) {
@@ -50,8 +49,8 @@ export default function PhotoCarousel({ title, path }: PhotoCarouselProps) {
   const showControls = images.length > 1;
 
   return (
-    <section className="photo-carousel">
-      
+    <section className="event-carousel">
+
       <h2>{title}</h2>
 
       <div className={`carousel-container ${showControls ? '' : 'no-arrows'}`}>
@@ -67,7 +66,7 @@ export default function PhotoCarousel({ title, path }: PhotoCarouselProps) {
             {images.length > 0 ? (
               <Image
                 src={images[currentIndex]}
-                alt={`Flyer   ${currentIndex + 1}`}
+                alt={`Flyer ${currentIndex + 1}`}
                 width={600}
                 height={600}
                 style={{
@@ -116,15 +115,15 @@ export default function PhotoCarousel({ title, path }: PhotoCarouselProps) {
               <Image
                 src={images[currentIndex]}
                 alt={`Flyer ${currentIndex + 1}`}
-                width={800}
-                height={800}
+                width={600}
+                height={600}
                 style={{
-                  maxWidth: "80vw",
-                  maxHeight: "80vh",
+                  maxWidth: "100%",
+                  height: "auto",
                   objectFit: "contain",
-                  display: "block",
+                  cursor: "pointer",
                 }}
-                unoptimized
+                
               />
             </div>
           </div>
