@@ -1,43 +1,32 @@
-'use client';
-import { useEffect, useState } from 'react';
-
-export interface Track {
-  id: string;
-  name: string;
-  preview_url: string;
-  album: { images: { url: string }[] };
-  external_urls: { spotify: string };
-}
-
 export default function MusicShowcase() {
-  const [tracks, setTracks] = useState<Track[]>([]);
-
-  useEffect(() => {
-    fetch('/api/music')
-      .then(res => res.json())
-      .then(data => setTracks(data.tracks || []))
-      .catch(err => console.error('Error fetching tracks:', err));
-  }, []);
-
   return (
      <div className="section-music">
 
       <h2>Available Music</h2>
 
      <div className="tracks-grid">
-        {tracks.map(track => (
-          <div key={track.id} className="track-item">
 
-            <a href={track.external_urls.spotify} target="_blank" rel="noopener noreferrer">
-              <img src={track.album.images[0].url} alt={track.name} />
+        <div key="findyou" className="track-item">
+            <a href="https://open.spotify.com/track/2mExeMPZel1WrFQ2p9rWur?si=0044125b3e354020" target="_blank" rel="noopener noreferrer">
+              <img src="/musicThumbnails/findyou.jpg" alt="spotify-findyou" />
             </a>
+            <p>Find You</p>
+        </div>
 
-            <p>{track.name}</p>
+        <div key="makingchangesinmacon" className="track-item">
+          <a href="https://open.spotify.com/track/7MBkgApGwLiUspxt7RWcBC?si=2d38b54e574849ad" target="_blank" rel="noopener noreferrer">
+            <img src="/musicThumbnails/makingchangesinmacon.jpg" alt="spotify-makingchangesinmacon" />
+          </a>
+          <p>Making Changes in Macon</p>
+        </div>
 
-            {track.preview_url && <audio controls src={track.preview_url} />}
+        <div key="mysterygirl" className="track-item">
+          <a href="https://open.spotify.com/track/3DdyYwJPBHwGtxX2ziepBQ?si=cc00bf87b93b47d0" target="_blank" rel="noopener noreferrer">
+            <img src="/musicThumbnails/mysterygirl.jpg" alt="spotify-mysterygirl" />
+          </a>
+          <p>Mystery Girl</p>
+        </div>
 
-          </div>
-        ))}
       </div>
       
     </div>
