@@ -2,12 +2,12 @@
 import { useState, useEffect } from "react";
 import EventCarousel from "./components/eventcarousel";
 import PhotoDisplay from "./components/photodisplay";
-import MusicShowcase, { Track } from "./components/musicshowcase";
+import MusicShowcase  from "./components/musicshowcase";
 
 export default function Home() {
 
   const [photos, setPhotos] = useState<string[]>([]);
-  const [tracks, setTracks] = useState<Track[]>([]);
+  // const [tracks, setTracks] = useState<Track[]>([]);
   const [loading, setLoading] = useState(true);
 
   // Waits for all events and tracks are finished loading
@@ -21,13 +21,17 @@ export default function Home() {
             return text ? JSON.parse(text) : [];
           }),
           fetch("/api/music").then(async res => {
-            if (!res.ok) throw new Error(`HTTP error ${res.status}`);
+            // if (!res.ok) throw new Error(`HTTP error ${res.status}`);
+            if (!res.ok) {
+              console.warn(`Music API error: ${res.status}`);
+              return { tracks: [] }; // fallback instead of crash
+            }
             const text = await res.text();
             return text ? JSON.parse(text) : { tracks: [] };
           })
         ]);
         setPhotos(eventsRes.map((f: { url: string }) => f.url));
-        setTracks(musicRes.tracks || []);
+        // setTracks(musicRes.tracks || []);
 
       } catch (err) {
         console.error(err);
