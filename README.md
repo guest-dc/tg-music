@@ -22,5 +22,3 @@ The application is designed as a responsive, component-based platform optimized 
 - [Bootstrap 5](https://getbootstrap.com/) – CSS framework for responsive UI and layout system
 - [React Icons](https://react-icons.github.io/react-icons/) – Icon library for UI and brand icons
 - [Vercel](https://vercel.com/) – Deployment and hosting platform
-
-
