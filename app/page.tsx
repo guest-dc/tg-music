@@ -64,7 +64,7 @@ export default function Home() {
     <main>
 
       <section id="home">
-        <PhotoDisplay src="/photos/walking_guitar.png" alt="Artist photo"/>
+        <PhotoDisplay src="/photos/point_up.jpg" alt="Artist photo"/>
       </section>
 
       <section id="events" className="section-events">
@@ -78,7 +78,7 @@ export default function Home() {
       <section id="about" className="section-bio">
         <div className="content">
           <div className="left">
-            <img src="/photos/johndeer.jpg" alt="Artist photo" />
+            <img src="/photos/band.jpeg" alt="Artist photo" />
           </div>
           <div className="right">
           <h2>About</h2>

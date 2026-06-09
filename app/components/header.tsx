@@ -47,7 +47,7 @@ export default function Header() {
     <header>
 
       <Link href="/">
-        <img className="logo" src="/icons/logo-gw.png" alt="Logo" width={110} height={40} />
+        <img className="logo" src="/icons/logo.png" alt="Logo" width={110} height={40} />
       </Link>
 
       <div className={`nav-container ${menuOpen ? "active" : ""} ${closing ? "closing" : ""}`}>

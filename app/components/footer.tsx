@@ -24,13 +24,13 @@ export default function Footer() {
                     </a>
                </div>
 
-               <p>Sponsored By:</p>
+               {/* <p>Sponsored By:</p>
 
                <div className="sponsors">
                     <a href="https://www.brandedstarr.com/" target="_blank" rel="noopener noreferrer" >
                          <img src="/icons/branded_starr.png" alt="Branded Starr" width={120} height={60} />
                     </a>
-               </div>
+               </div> */}
           </footer>
      );
 }
