@@ -78,7 +78,7 @@ export default function Home() {
       <section id="about" className="section-bio">
         <div className="content">
           <div className="left">
-            <img src="/photos/band.jpeg" alt="Artist photo" />
+            <img src="/photos/band.JPEG" alt="Artist photo" />
           </div>
           <div className="right">
           <h2>About</h2>
