@@ -1,6 +1,9 @@
-import Script from "next/script";
-import type { Metadata } from "next";
+import BootstrapClient from "@/components/BootstrapClient";
 import "bootstrap/dist/css/bootstrap.min.css";
+import "@/app/site.css";
+
+import type { Metadata } from "next";
+import { Header, Footer } from "@/components/layout";
 
 export const metadata: Metadata = {
     title: "TG Music",
@@ -14,9 +17,16 @@ export default function RootLayout({
 }>) {
     return (
         <html lang="en">
-            <body>
-                {children}
-                <Script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" strategy="afterInteractive" />
+            <body className="d-flex flex-column min-vh-100">
+                <Header />
+
+                <main className="flex-grow-1">
+                    {children}
+                </main>
+
+                <Footer />
+
+                <BootstrapClient />
             </body>
         </html>
     );
