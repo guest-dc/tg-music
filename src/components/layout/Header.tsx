@@ -48,7 +48,7 @@ export default function Header() {
          </button>
 
          <div id="headerNavbar" className="collapse navbar-collapse pb-0">
-            <div className="ms-auto d-flex flex-column align-items-end gap-3">
+            <div id="navbar-items" className="ms-auto d-flex flex-column align-items-end gap-3">
                <ul id="header-pages" className="navbar-nav align-items-end d-flex gap-3">
                   <li className="nav-item"><a className="nav-link py-0" style={{paddingLeft:"0"}} href="#home">Home</a></li>
                   <li className="nav-item"><a className="nav-link py-0" href="#events">Events</a></li>

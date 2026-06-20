@@ -23,7 +23,7 @@
 }
 
 /*============================================================*/
-/* Bootstrap Override */
+/* Header Styling */
 /*============================================================*/
 
 .navbar {
@@ -31,6 +31,8 @@
     --bs-navbar-hover-color: var(--text1-color-dark);
     --bs-navbar-toggler-icon-bg: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(186, 141, 99, 1)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
     background: var(--color1);
+    position: relative;
+    z-index: 1000;
 }
 
 #headerNavbar a {
@@ -41,18 +43,41 @@
     opacity: 0.75;
 }
 
-.navbar-collapse.collapse.show {
-    padding-bottom: 1rem;
+@media (max-width: 767.98px) {
+  .navbar-collapse {
+    position: absolute;
+    width: 100%;
+  }
 }
 
+.navbar-collapse {
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: var(--color1);
+    z-index: 999;
+}
+
+    .navbar-collapse.collapsing {
+        position: absolute;
+    }
+
+    .navbar-collapse.collapse.show {
+        padding-bottom: 1rem;
+    }
+
+    .navbar-collapse.collapsing #header-socials,
+    .navbar-collapse.collapse.show #header-socials {
+        padding-bottom: 20px;
+    }
+
+    .navbar-collapse.collapsing #navbar-items,
+    .navbar-collapse.collapse.show #navbar-items {
+        padding-right: 48px;
+    }
 
 #header-pages {
     line-height: 28px;
-}
-
-.navbar-collapse.collapsing #header-socials,
-.navbar-collapse.collapse.show #header-socials {
-    padding-bottom: 20px;
 }
 
 .nav-link {
@@ -139,7 +164,7 @@
 }
 
 /*============================================================*/
-/* HTML Override */
+/* Footer Styling */
 /*============================================================*/
 
 footer {
@@ -152,4 +177,35 @@ footer a {
 
 footer a:hover {
     opacity: 0.75;
+}
+
+/*============================================================*/
+/* Photo Display Styling */
+/*============================================================*/
+
+.photo-display {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.photo-display::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: inherit;
+  background-size: cover;
+  background-position: center;
+  filter: blur(20px);
+  transform: scale(1.2);
+  z-index: 0;
+}
+
+.photo-display img {
+  position: relative;
+  z-index: 1;
+  display: block;
+  box-shadow: 0px 0px 8px rgba(0, 0, 0, 1.0);
 }

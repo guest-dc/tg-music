@@ -1,9 +1,9 @@
-import BootstrapClient from "@/components/BootstrapClient";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "@/app/site.css";
 
 import type { Metadata } from "next";
 import { Header, Footer } from "@/components/layout";
+import { BootstrapClient } from "@/components/clients";
 
 export const metadata: Metadata = {
     title: "TG Music",
@@ -20,10 +20,8 @@ export default function RootLayout({
             <body className="d-flex flex-column min-vh-100">
                 <Header />
 
-                <main className="flex-grow-1">
-                    {children}
-                </main>
-
+                {children}
+                
                 <Footer />
 
                 <BootstrapClient />
