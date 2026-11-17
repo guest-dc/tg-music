@@ -7,7 +7,7 @@ export default function MusicShowcase() {
      <div className="tracks-grid">
 
         <div key="runbabyrun" className="track-item">
-            <a href="https://distrokid.com/hyperfollow/thomasguest/run-baby-run-feat-laila-noelle" target="_blank" rel="noopener noreferrer">
+            <a href="https://open.spotify.com/track/4W0P233bdkaB61iiKM5pkM?si=76df5d119a174cbd" target="_blank" rel="noopener noreferrer">
               <img src="/musicThumbnails/runbabyrun.jpg" alt="spotify-runbabyrun" />
             </a>
             <p>Run Baby Run</p>
